@@ -12,7 +12,7 @@ state("NINJA GAIDEN SIGMA"){
     short curBossHP: 0xB9E1A8;
     short maxBossHP: 0xD632B4;
     int keyItem: 0x3EC1DE4; // Indicates the id of the last picked up item; e.g. 191 = Great Spirit of Elixir
-    int KarmaScore 0xCBE58C;
+    int KarmaScore: 0xCBE58C;
     int CurrentWaveKillCount: 0xCBE59C;
     int moneyRyu: 0xCBE5F0;
     int moneyRachel: 0xCBFA40;
