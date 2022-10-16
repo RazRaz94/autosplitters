@@ -26,15 +26,16 @@ init{
 
 startup{
     vars.KeyItems = new List<int>()
-    {189, 218, 154, 260, 281, 275, 440, 219, 122, 98, 102, 124, 103, 95, 248, 272, 47, 274, 107, 105, 188, 104, 108, 457, 458, 69, 113, 70, 72, 71, 125, 117, 282, 118, 119, 123,
+    {189, 218, 408, 154, 208, 260, 281, 409, 299, 275, 440, 219, 122, 98, 202, 102, 441, 158, 124, 103, 95, 248, 272, 47, 274, 107, 172, 105, 188, 104, 108, 457, 458, 69, 113, 70, 72, 71, 125, 117, 282, 118, 119, 123,
      120, 121};
     
     vars.KeyItemsSettings = new List<String>()
-    {"Fangs of the Samurai", "Key of Courage", "The Art of the Fire Wheels", "Wing Key", "ID Card", "Lily Key", "Dworku Monastery Key", "Key of Pegasus", "Stone Tablet (Right)",
-     "Book of the Eons", "Holy Grail", "Wolf, Deity of Wisdom", "Skull Key", "Stone Tablet (Top)", "Strong bow", "Warehouse Key", "Shutter Control Card Key",
-     "Control Room Key", "Key of Insect", "Red Tablet of Stream", "Statue of the Water Spirit", "Blue Tablet of Stream", "Brand of Valor", "Key of Triton", "Mysterious Stone Tablet",
-     "Shield of Vigoor", "Stone Tablet (Left)", "Cog of Vigoor", "Eye of Ice", "Eye of Flame", "Devil, Deity of Immorality", "Serpent, Deity of Creation", "Griffon Key", "Key of Lion",
-     "Key of Lioness", "Raptor, Deity of Sentiment", "Key of the Decayed Soul", "Demon, Deity of Destruction"};
+    {"Fangs of the Samurai", "Key of Courage", "Technique Scroll: Flying Swallow", "The Art of the Fire Wheels", "Technique Scroll: Counter Attacks", "Wing Key", "ID Card",
+	 "Dragon's Claw & Tiger's Fang", "Lunar", "Lily Key", "Dworku Monastery Key", "Key of Pegasus", "Stone Tablet (Right)", "Book of the Eons", "Vigoorian Flail",
+	 "Holy Grail", "Blades of Ouroboros", "The Art of Ice Storm", "Wolf, Deity of Wisdom", "Skull Key", "Stone Tablet (Top)", "Strong bow", "Warehouse Key",
+	 "Shutter Control Card Key", "Control Room Key", "Key of Insect", "The Art of the Inazuma", "Red Tablet of Stream", "Statue of the Water Spirit", "Blue Tablet of Stream", "Brand of Valor",
+	 "Key of Triton", "Mysterious Stone Tablet", "Shield of Vigoor", "Stone Tablet (Left)", "Cog of Vigoor", "Eye of Ice", "Eye of Flame", "Devil, Deity of Immorality", "Serpent, Deity of Creation",
+	 "Griffon Key", "Key of Lion", "Key of Lioness", "Raptor, Deity of Sentiment", "Key of the Decayed Soul", "Demon, Deity of Destruction"};
 
     settings.Add("DRI", false,"Deactivate Reset if you will return to the main menu during runs");
     settings.Add("chapter", false, "Chapter Splits");
@@ -76,7 +77,7 @@ split{
 
     // Item Splits
     if(settings["IS"]){
-        if(settings[current.keyItem.ToString()] && !vars.completedSplitsInt.Contains(current.keyItem)){ // vars.KeyItems.Contains(current.keyItem)
+        if(settings[current.keyItem.ToString()] && !vars.completedSplitsInt.Contains(current.keyItem) && current.keyItem != old.keyItem){ // vars.KeyItems.Contains(current.keyItem)
             vars.completedSplitsInt.Add(current.keyItem);
             return true;
         }
