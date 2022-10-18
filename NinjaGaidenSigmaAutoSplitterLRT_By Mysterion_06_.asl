@@ -41,7 +41,7 @@ startup{
     settings.Add("chapter", false, "Chapter Splits");
     settings.Add("IS", false,"Item Splits");
     settings.Add("GS", false,"Golden Scarab");
-    for(int i = 0; i < 38; i++){
+    for(int i = 0; i < 46; i++){
         settings.Add("" + vars.KeyItems[i].ToString(), false, "" + vars.KeyItemsSettings[i].ToString(), "IS");
     }
 }
